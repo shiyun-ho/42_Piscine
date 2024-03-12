@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshi-yun <hshi-yun@student.42singapore.sg  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/07 19:46:57 by hshi-yun          #+#    #+#             */
-/*   Updated: 2024/03/08 10:26:47 by hshi-yun         ###   ########.fr       */
+/*   Created: 2024/03/12 15:34:32 by hshi-yun          #+#    #+#             */
+/*   Updated: 2024/03/12 16:40:48 by hshi-yun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(char *s1, char *s2)
+int	ft_atoi(char *str)
 {
-	int	i;
-	int	diff;
+	int num; 
+	int sign; 
 
-	i = 0;
-	diff = 0;
-	while ((s1[i] != '\0') || (s2[i] != '\0'))
+	num = 0;
+	sign = 0; 
+
+	while ((*str <= '\t' && *str >= '\r') || (*str == ' '))
+		++str;
+	while (*str == '+' || *str == '-')
 	{
-		if (s1[i] > s2[i])
-		{
-			diff = diff + (s1[i] - s2[i]); 
-		}
-		if (s1[i]> s2[i])
-		{
-			diff = diff + (s1[i] - s2[i]); 
-		}
-		i++; 
+		if (*str == '-')
+			sign++;
+		++str;
 	}
-	return diff;
+	while (*str >= '0' && *str <= '9')
+	{
+		num = num * 10;
+		num = num + *str - '0';
+		++str;
+	}
+	if (!(sign % 2 == 0))
+	{
+		num = num * -1;
+	}
+	return num;
 }

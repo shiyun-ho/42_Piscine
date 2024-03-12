@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshi-yun <hshi-yun@student.42singapore.sg  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/07 19:46:57 by hshi-yun          #+#    #+#             */
-/*   Updated: 2024/03/08 10:26:47 by hshi-yun         ###   ########.fr       */
+/*   Created: 2024/03/10 09:58:51 by hshi-yun          #+#    #+#             */
+/*   Updated: 2024/03/10 10:04:45 by hshi-yun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(char *s1, char *s2)
-{
-	int	i;
-	int	diff;
+#include <stdio.h>
 
-	i = 0;
-	diff = 0;
-	while ((s1[i] != '\0') || (s2[i] != '\0'))
-	{
-		if (s1[i] > s2[i])
-		{
-			diff = diff + (s1[i] - s2[i]); 
-		}
-		if (s1[i]> s2[i])
-		{
-			diff = diff + (s1[i] - s2[i]); 
-		}
-		i++; 
-	}
-	return diff;
+char	*ft_strstr(char *str, char *to_find);
+
+int main(void)
+{
+	char str[] = "Hello";
+	char substr[] = "llo";
+
+	char *str_ptr = &str[0];
+	char *substr_ptr = &substr[0];
+
+	ft_strstr(str_ptr, substr_ptr);
+	
+	printf("%s", ft_strstr(str_ptr, substr_ptr));
+
+	return 0;
 }
+
+	

@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshi-yun <hshi-yun@student.42singapore.sg  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/07 19:46:57 by hshi-yun          #+#    #+#             */
-/*   Updated: 2024/03/08 10:26:47 by hshi-yun         ###   ########.fr       */
+/*   Created: 2024/03/12 14:29:28 by hshi-yun          #+#    #+#             */
+/*   Updated: 2024/03/12 16:38:05 by hshi-yun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(char *s1, char *s2)
-{
-	int	i;
-	int	diff;
+#include <stdio.h>
 
-	i = 0;
-	diff = 0;
-	while ((s1[i] != '\0') || (s2[i] != '\0'))
-	{
-		if (s1[i] > s2[i])
-		{
-			diff = diff + (s1[i] - s2[i]); 
-		}
-		if (s1[i]> s2[i])
-		{
-			diff = diff + (s1[i] - s2[i]); 
-		}
-		i++; 
-	}
-	return diff;
+int	ft_atoi(char *str);
+
+int main(void)
+{
+	char *str = "          +----+1505*1993";
+
+	printf("%d\n", ft_atoi(str));
+
+	return 0;
 }

@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshi-yun <hshi-yun@student.42singapore.sg  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/07 19:46:57 by hshi-yun          #+#    #+#             */
-/*   Updated: 2024/03/08 10:26:47 by hshi-yun         ###   ########.fr       */
+/*   Created: 2024/03/11 12:48:46 by hshi-yun          #+#    #+#             */
+/*   Updated: 2024/03/11 12:51:31 by hshi-yun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(char *s1, char *s2)
+#include <unistd.h>
+
+void	ft_putstr(char *str)
 {
 	int	i;
-	int	diff;
 
 	i = 0;
-	diff = 0;
-	while ((s1[i] != '\0') || (s2[i] != '\0'))
+	while (str[i] != '\0')
 	{
-		if (s1[i] > s2[i])
-		{
-			diff = diff + (s1[i] - s2[i]); 
-		}
-		if (s1[i]> s2[i])
-		{
-			diff = diff + (s1[i] - s2[i]); 
-		}
-		i++; 
+		write(1, &str[i], 1);
+		i++;
 	}
-	return diff;
 }
+
