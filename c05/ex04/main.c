@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshi-yun <hshi-yun@student.42singapore.sg  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/12 17:13:20 by hshi-yun          #+#    #+#             */
-/*   Updated: 2024/03/13 17:13:43 by hshi-yun         ###   ########.fr       */
+/*   Created: 2024/03/13 20:02:11 by hshi-yun          #+#    #+#             */
+/*   Updated: 2024/03/13 20:10:24 by hshi-yun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_iterative_factorial(int nb)
+#include <stdio.h>
+
+int	ft_fibonacci(int index);
+
+int main(void)
 {
-	int sum = 1;
-	if (nb < 0)
-	{
-		return (0);
-	}
-	while (nb > 1)
-	{
-		sum = sum * nb;
-		nb--;
-	}
-	return sum;
+	for (int i = -3; i < 10; i++)
+		printf(">>>idx: %i = %i\n", i, ft_fibonacci(i));
+
+	return (0);
 }

@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshi-yun <hshi-yun@student.42singapore.sg  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/12 17:13:20 by hshi-yun          #+#    #+#             */
-/*   Updated: 2024/03/13 17:13:43 by hshi-yun         ###   ########.fr       */
+/*   Created: 2024/03/13 17:29:24 by hshi-yun          #+#    #+#             */
+/*   Updated: 2024/03/13 17:32:33 by hshi-yun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_iterative_factorial(int nb)
+#include <stdio.h>
+
+int ft_recursive_factorial(int nb);
+
+int main(void)
 {
-	int sum = 1;
-	if (nb < 0)
+	for (int i = -3; i < 10; i++)
 	{
-		return (0);
+		printf(">>>%i! : %i\n", i, ft_recursive_factorial(i));
 	}
-	while (nb > 1)
-	{
-		sum = sum * nb;
-		nb--;
-	}
-	return sum;
 }

@@ -1,26 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshi-yun <hshi-yun@student.42singapore.sg  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/12 17:13:20 by hshi-yun          #+#    #+#             */
-/*   Updated: 2024/03/13 17:13:43 by hshi-yun         ###   ########.fr       */
+/*   Created: 2024/03/13 20:22:51 by hshi-yun          #+#    #+#             */
+/*   Updated: 2024/03/14 16:10:25 by hshi-yun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_iterative_factorial(int nb)
+int	ft_sqrt(int nb)
 {
-	int sum = 1;
+	long start;
+	long mid;
+	long end;
+	long sum;
+
+	if (nb == 0 || nb == 1)
+		return nb;
 	if (nb < 0)
+		return 0;
+	start = 1;
+	end = nb;
+	while (start <= end)
 	{
-		return (0);
+		mid = start + (end - start) / 2;
+		sum = mid * mid;
+		if (sum == nb)
+			return (int)mid;
+		else if (sum < nb)
+			start = mid + 1;
+		else
+			end = mid - 1;
 	}
-	while (nb > 1)
-	{
-		sum = sum * nb;
-		nb--;
-	}
-	return sum;
+	return (0);
 }
