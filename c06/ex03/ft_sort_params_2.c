@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hshi-yun <hshi-yun@student.42singapore.sg  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/16 12:46:07 by hshi-yun          #+#    #+#             */
-/*   Updated: 2024/03/18 08:28:21 by hshi-yun         ###   ########.fr       */
+/*   Created: 2024/03/15 11:59:44 by hshi-yun          #+#    #+#             */
+/*   Updated: 2024/03/15 13:20:24 by hshi-yun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,48 +24,20 @@ void	ft_putstr(char *str)
 	}
 }
 
-int	ft_strcmp(char *s1, char *s2)
-{
-	unsigned int	i;
-
-	i = 0;
-	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
-		i++;
-	return (s1[i] - s2[i]);
-}
+//Some function to sort according to acsii order 
 
 int main(int argc, char *argv[])
 {
 	int j;
-	int k;
-	int l;
-	char *temp_arg;
 
 	j = 1;
-	k = 2;
-	l = 1;
 	if (argc == 1)
 		return 0;
-	while (j < argc && k < argc)
+	while (j < argc)
 	{	
-		int compare_result = ft_strcmp(argv[j], argv[k]);
-		if (compare_result != 0)
-		{
-			if (compare_result > 0)
-			{//store temp arg -> swap
-				temp_arg = argv[j];
-				argv[j] = argv[k];
-				argv[k] = temp_arg;
-			}
-		}
-		j++;
-		k++;
-	}
-	while (l < argc)
-	{
-		ft_putstr(argv[l]);
+		ft_putstr(argv[j]);
 		ft_putstr("\n");
-		l++;
+		j++;
 	}
 	return (0);
 }
